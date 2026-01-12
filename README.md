@@ -28,4 +28,4 @@ O sistema segue uma arquitetura em camadas simplificada para o MVP:
 - `app`: Interface de console para interação.
 
 ---
-Desenvolvido por **[Seu Nome]** como parte de estudo intensivo de Engenharia de Software e Java Backend.
+Desenvolvido por **Gustavo Cazzine** como parte de estudo intensivo de Engenharia de Software e Java Backend.
