@@ -1,5 +1,6 @@
 package repository;
 
+import model.Agendamento;
 import model.Cliente;
 import model.Profissional;
 import model.Servico;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class BancoDeDadosFake {
     //Atributos
-    private static List<Cliente> clientes = new ArrayList<Object>();
+    private static List<Cliente> clientes = new ArrayList<>();
     private static List<Profissional> profissionais = new ArrayList<>();
     private static List<Servico> servicos = new ArrayList<>();
     private static List<Agendamento> agendamentos = new ArrayList<>();
