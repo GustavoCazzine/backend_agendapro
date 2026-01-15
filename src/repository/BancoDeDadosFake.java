@@ -27,8 +27,39 @@ public class BancoDeDadosFake {
         s.setId(servicos.size() + 1);
         servicos.add(s);
     }
-    public void adicionarAgendamento(Agendamento a){
+    public static void adicionarAgendamento(Agendamento a){
         agendamentos.add(a);
     }
 
+    public static List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public static void setClientes(List<Cliente> clientes) {
+        BancoDeDadosFake.clientes = clientes;
+    }
+
+    public static List<Profissional> getProfissionais() {
+        return profissionais;
+    }
+
+    public static void setProfissionais(List<Profissional> profissionais) {
+        BancoDeDadosFake.profissionais = profissionais;
+    }
+
+    public static List<Servico> getServicos() {
+        return servicos;
+    }
+
+    public static void setServicos(List<Servico> servicos) {
+        BancoDeDadosFake.servicos = servicos;
+    }
+
+    public static List<Agendamento> getAgendamentos() {
+        return agendamentos;
+    }
+
+    public static void setAgendamentos(List<Agendamento> agendamentos) {
+        BancoDeDadosFake.agendamentos = agendamentos;
+    }
 }
