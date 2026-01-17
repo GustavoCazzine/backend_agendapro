@@ -15,15 +15,15 @@ public class BancoDeDadosFake {
     private static List<Servico> servicos = new ArrayList<>();
     private static List<Agendamento> agendamentos = new ArrayList<>();
     //Metodos
-    public void adicionarCliente(Cliente c){
+    public static void adicionarCliente(Cliente c){
         c.setId(clientes.size() + 1);
         clientes.add(c);
     }
-    public void adicionarProfissional(Profissional p){
+    public static void adicionarProfissional(Profissional p){
         p.setId(profissionais.size() + 1);
         profissionais.add(p);
     }
-    public void adicionarServico(Servico s){
+    public static void adicionarServico(Servico s){
         s.setId(servicos.size() + 1);
         servicos.add(s);
     }
