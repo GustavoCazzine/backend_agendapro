@@ -57,6 +57,10 @@ public class Main{
                         int idServico = scanner.nextInt();
                         Servico servico = BancoDeDadosFake.getServicos().get(idServico - 1);
 
+                        // 3. Escolher Serviço
+                        System.out.println("Digite o valor pago: R$");
+                        double valorPago = scanner.nextDouble();
+
                         // 4. Montar a Data
                         System.out.println("Digite o Dia (ex: 25):");
                         int dia = scanner.nextInt();
@@ -69,7 +73,7 @@ public class Main{
                         LocalDateTime dataAgenda = LocalDateTime.of(2026, 1, dia, hora, minuto);
 
                         // 5. Criar e Tentar Salvar
-                        Agendamento novoAgendamento = new Agendamento(cliente, prof, servico, dataAgenda);
+                        Agendamento novoAgendamento = new Agendamento(cliente, prof, servico, dataAgenda, valorPago);
 
                         // O Service vai validar se tem conflito
                         service.registrarAgendamento(novoAgendamento);

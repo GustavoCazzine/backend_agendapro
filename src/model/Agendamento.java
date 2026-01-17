@@ -11,15 +11,17 @@ public class Agendamento {
     private Servico servico;
     private LocalDateTime dataHoraInicio;
     private LocalDateTime datahoraFim;
+    private double valorPago;
     //Formatar data
     DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     //Contrutor
-    public Agendamento(Cliente cliente, Profissional profissional, Servico servico, LocalDateTime dataHoraInicio) {
+    public Agendamento(Cliente cliente, Profissional profissional, Servico servico, LocalDateTime dataHoraInicio, double valorPago) {
         this.cliente = cliente;
         this.profissional = profissional;
         this.servico = servico;
         this.dataHoraInicio = dataHoraInicio;
         this.datahoraFim = dataHoraInicio.plusMinutes(servico.getDuracaoEmMinutos());
+        this.valorPago = valorPago;
     }
     //Metodos especiais
     public int getId() {
@@ -70,15 +72,24 @@ public class Agendamento {
         this.datahoraFim = datahoraFim;
     }
 
+    public double getValorPago() {
+        return valorPago;
+    }
+
+    public void setValorPago(double valorPago) {
+        this.valorPago = valorPago;
+    }
+
     @Override
     public String toString() {
-        return "Agendamentos{" +
+        return "Agendamento{" +
                 "id=" + id +
-                ", cliente=" + cliente +
-                ", profissional=" + profissional +
-                ", servico=" + servico +
-                ", dataHoraInicio=" + dataHoraInicio.format(formatador) +
-                ", datahoraFim=" + datahoraFim.format(formatador) +
+                ", cliente=" + cliente.getNome() + // Dica: Pegue só o nome para não poluir
+                ", profissional=" + profissional.getNome() + // Dica: Pegue só o nome
+                ", servico=" + servico.getDescricao() +
+                ", inicio=" + dataHoraInicio.format(formatador) + // <--- AGORA SIM
+                ", fim=" + datahoraFim.format(formatador) +       // <--- AGORA SIM
+                ", pago= R$" + valorPago +
                 '}';
     }
 }
