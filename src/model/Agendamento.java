@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 public class Agendamento {
     //Atributos
@@ -12,6 +13,10 @@ public class Agendamento {
     private LocalDateTime dataHoraInicio;
     private LocalDateTime datahoraFim;
     private double valorPago;
+    private String codigoSeguranca;
+
+    Random random = new Random();
+
     //Formatar data
     DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     //Contrutor
@@ -22,6 +27,7 @@ public class Agendamento {
         this.dataHoraInicio = dataHoraInicio;
         this.datahoraFim = dataHoraInicio.plusMinutes(servico.getDuracaoEmMinutos());
         this.valorPago = valorPago;
+        this.codigoSeguranca = String.valueOf(random.nextInt(9000) + 1000);
     }
     //Metodos especiais
     public int getId() {
@@ -76,6 +82,10 @@ public class Agendamento {
         return valorPago;
     }
 
+    public Random getRandom() {
+        return random;
+    }
+
     public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
     }
@@ -90,6 +100,7 @@ public class Agendamento {
                 ", inicio=" + dataHoraInicio.format(formatador) + // <--- AGORA SIM
                 ", fim=" + datahoraFim.format(formatador) +       // <--- AGORA SIM
                 ", pago= R$" + valorPago +
+                ", codigo de segurança=" + codigoSeguranca +
                 '}';
     }
 }
